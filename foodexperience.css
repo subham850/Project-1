@@ -1,0 +1,584 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=Tourney:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Poppins', sans-serif;
+	background: linear-gradient(120deg, #fffbe6 60%, #f8fafc 100%);
+	min-height: 100vh;
+}
+
+/* Navbar (same as other pages) */
+.navcontain {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: rgba(30, 30, 30, 0.32);
+	backdrop-filter: blur(16px) saturate(180%);
+	-webkit-backdrop-filter: blur(16px) saturate(180%);
+	display: flex;
+	justify-content: center;
+	z-index: 1000;
+	transition: background 0.4s, padding 0.3s;
+	box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+	border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.nav {
+	width: 100%;
+	max-width: 1300px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 40px;
+}
+.nav .logo img {
+	width: 60px;
+	filter: drop-shadow(0 2px 8px rgba(0,0,0,0.22));
+}
+.nav-links {
+	display: flex;
+	gap: 44px;
+	align-items: center;
+}
+.nav-links a {
+	color: #f0f0f0;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 14px;
+	letter-spacing: 0.7px;
+	position: relative;
+	transition: color 0.3s, transform 0.2s;
+	padding: 4px 0;
+}
+.nav-links a:hover {
+	color: #ff9800;
+	transform: translateY(-2px) scale(1.05);
+}
+.nav-links a::after {
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 2px;
+	left: 0;
+	bottom: -4px;
+	background: linear-gradient(90deg, #FFD700, #FF8C00);
+	border-radius: 2px;
+	transition: width 0.3s;
+}
+.nav-links a:hover::after {
+	width: 100%;
+}
+.nav-links .login_form {
+	background: linear-gradient(90deg, #136a8a, #267871);
+	color: white;
+	padding: 10px 24px;
+	border-radius: 25px;
+	font-weight: 700;
+	transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+	box-shadow: 0 4px 15px rgba(19, 106, 138, 0.4);
+	border: none;
+	outline: none;
+	font-size: 15px;
+	letter-spacing: 0.8px;
+}
+.nav-links .login_form:hover {
+	background: linear-gradient(90deg, #267871, #136a8a);
+	transform: translateY(-2px) scale(1.04);
+	box-shadow: 0 6px 20px rgba(19, 106, 138, 0.6);
+}
+
+
+
+
+
+/* Split Hero Section - Larger and Multi-Video */
+.split-hero.large-hero {
+	display: flex;
+	width: 100vw;
+	min-height: 520px;
+	height: 80vh;
+	background: linear-gradient(120deg, #fffbe6 60%, #f8fafc 100%);
+	box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+	align-items: stretch;
+	margin-bottom: 0;
+}
+.hero-video-side.slideshow-video {
+	flex: 1.5;
+	position: relative;
+	overflow: hidden;
+	min-width: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #222;
+}
+.hero-video-side.slideshow-video .bg-video {
+	width: 60vw;
+	height: 76vh;
+	min-width: 320px;
+	min-height: 320px;
+	object-fit: cover;
+	border-radius: 24px;
+	box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+	filter: brightness(0.7) blur(1px);
+}
+.hero-intro-side {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 64px 48px;
+	background: rgba(255,255,255,0.88);
+	border-top-right-radius: 32px;
+	border-bottom-right-radius: 32px;
+	box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+	min-width: 320px;
+}
+.hero-intro-side h1 {
+	font-size: 3.2rem;
+	font-family: 'Playfair Display', serif;
+	color: #136a8a;
+	margin-bottom: 18px;
+	letter-spacing: 2px;
+	font-weight: 700;
+}
+.hero-intro-side .accent {
+	color: #ff9800;
+	font-family: 'Tourney', serif;
+	font-size: 3.4rem;
+	font-weight: 700;
+	letter-spacing: 2px;
+}
+.hero-intro-side .highlight {
+	background: linear-gradient(90deg, #FFD700, #FF8C00);
+	color: #fff;
+	padding: 2px 10px;
+	border-radius: 8px;
+	font-weight: 600;
+	font-size: 1.1rem;
+}
+.hero-intro-side p {
+	font-size: 1.35rem;
+	font-family: 'Delius Swash Caps', serif;
+	color: #444;
+	margin-bottom: 0;
+	line-height: 1.7;
+}
+
+/* Carousel Section */
+.food-experiences-list {
+	padding: 60px 0 40px 0;
+	background: linear-gradient(120deg, #fffbe6 60%, #f8fafc 100%);
+	text-align: center;
+}
+.carousel-title {
+	font-size: 2.2rem;
+	color: #ff9800;
+	font-family: 'Playfair Display', serif;
+	margin-bottom: 38px;
+	letter-spacing: 1.2px;
+	text-shadow: 1px 1px 8px rgba(255,152,0,0.08);
+}
+.experience-carousel {
+	display: flex;
+	flex-direction: row;
+	gap: 32px;
+	overflow-x: auto;
+	padding-bottom: 16px;
+	scrollbar-width: thin;
+	scrollbar-color: #FFD700 #fffbe6;
+}
+.experience-carousel::-webkit-scrollbar {
+	height: 8px;
+}
+.experience-carousel::-webkit-scrollbar-thumb {
+	background: #FFD700;
+	border-radius: 8px;
+}
+.experience-card {
+	background: linear-gradient(135deg, #fffbe6 80%, #ffd7b5 100%);
+	border-radius: 28px;
+	box-shadow: 0 8px 32px rgba(38,120,113,0.14), 0 2px 8px rgba(255,215,0,0.08);
+	overflow: hidden;
+	min-width: 320px;
+	max-width: 340px;
+	transition: transform 0.5s cubic-bezier(.25,.8,.25,1), box-shadow 0.5s, background 0.5s;
+	cursor: pointer;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 1.5px solid #FFD70033;
+}
+.experience-card img {
+	width: 100%;
+	height: 180px;
+	object-fit: cover;
+	border-top-left-radius: 28px;
+	border-top-right-radius: 28px;
+	transition: filter 0.5s, transform 0.5s;
+	z-index: 2;
+}
+.experience-card:hover {
+	transform: translateY(-12px) scale(1.04);
+	box-shadow: 0 20px 60px rgba(38,120,113,0.22), 0 4px 16px rgba(255,215,0,0.18);
+	background: #ffe5b4;
+}
+.experience-card:hover img {
+	filter: brightness(0.96) saturate(1.18) drop-shadow(0 4px 16px rgba(38,120,113,0.10));
+	transform: scale(1.03);
+}
+.exp-info {
+	padding: 24px 18px 18px 18px;
+	text-align: left;
+	width: 100%;
+	position: relative;
+	z-index: 3;
+}
+.exp-info h3 {
+	font-size: 1.15rem;
+	color: #136a8a;
+	margin-bottom: 10px;
+	font-family: 'Playfair Display', serif;
+	font-weight: 700;
+	letter-spacing: 1.1px;
+	text-shadow: 1px 1px 8px rgba(19,106,138,0.08);
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+.card-bar {
+	display: inline-block;
+	height: 4px;
+	width: 0;
+	background: linear-gradient(90deg, #FFD700, #FF8C00);
+	border-radius: 2px;
+	margin-right: 10px;
+	transition: width 0.4s cubic-bezier(.25,.8,.25,1);
+}
+.experience-card:hover .card-bar {
+	width: 32px;
+}
+.exp-info p {
+	font-size: 1rem;
+	color: #444;
+	font-family: 'Delius Swash Caps', serif;
+	opacity: 0.88;
+	line-height: 1.6;
+}
+
+@media (max-width: 1200px) {
+	.split-hero.large-hero { min-height: 340px; height: 60vh; }
+	.hero-video-side.multi-video .bg-video { width: 28vw; height: 48vh; min-width: 180px; min-height: 180px; }
+}
+@media (max-width: 900px) {
+	.nav { padding: 12px 10px; }
+	.nav-links { gap: 24px; }
+	.split-hero.large-hero { flex-direction: column; height: auto; min-height: 220px; }
+	.hero-video-side, .hero-intro-side { min-width: 0; width: 100%; border-radius: 0; }
+	.hero-intro-side { padding: 32px 16px; border-radius: 0; }
+	.experience-carousel { gap: 18px; }
+	.experience-card { min-width: 220px; max-width: 240px; }
+}
+@media (max-width: 600px) {
+	.nav { flex-direction: column; padding: 8px 2vw; }
+	.nav-links { gap: 16px; }
+	.split-hero.large-hero { flex-direction: column; height: auto; min-height: 120px; }
+	.hero-intro-side { padding: 18px 6px; border-radius: 0; }
+	.experience-carousel { flex-direction: column; gap: 14px; overflow-x: visible; }
+	.experience-card { min-width: 98vw; max-width: 320px; }
+}
+
+/* Carousel Section */
+.food-experiences-list {
+	padding: 60px 0 40px 0;
+	background: linear-gradient(120deg, #fffbe6 60%, #f8fafc 100%);
+	text-align: center;
+}
+.carousel-title {
+	font-size: 2.2rem;
+	color: #ff9800;
+	font-family: 'Playfair Display', serif;
+	margin-bottom: 38px;
+	letter-spacing: 1.2px;
+	text-shadow: 1px 1px 8px rgba(255,152,0,0.08);
+}
+.experience-carousel {
+	display: flex;
+	flex-direction: row;
+	gap: 32px;
+	overflow-x: auto;
+	padding-bottom: 16px;
+	scrollbar-width: thin;
+	scrollbar-color: #FFD700 #fffbe6;
+}
+.experience-carousel::-webkit-scrollbar {
+	height: 8px;
+}
+.experience-carousel::-webkit-scrollbar-thumb {
+	background: #FFD700;
+	border-radius: 8px;
+}
+.experience-card {
+	background: linear-gradient(135deg, #fffbe6 80%, #ffd7b5 100%);
+	border-radius: 28px;
+	box-shadow: 0 8px 32px rgba(38,120,113,0.14), 0 2px 8px rgba(255,215,0,0.08);
+	overflow: hidden;
+	min-width: 320px;
+	max-width: 340px;
+	transition: transform 0.5s cubic-bezier(.25,.8,.25,1), box-shadow 0.5s, background 0.5s;
+	cursor: pointer;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 1.5px solid #FFD70033;
+}
+.experience-card img {
+	width: 100%;
+	height: 180px;
+	object-fit: cover;
+	border-top-left-radius: 28px;
+	border-top-right-radius: 28px;
+	transition: filter 0.5s, transform 0.5s;
+	z-index: 2;
+}
+.experience-card:hover {
+	transform: translateY(-12px) scale(1.04);
+	box-shadow: 0 20px 60px rgba(38,120,113,0.22), 0 4px 16px rgba(255,215,0,0.18);
+	background: #ffe5b4;
+}
+.experience-card:hover img {
+	filter: brightness(0.96) saturate(1.18) drop-shadow(0 4px 16px rgba(38,120,113,0.10));
+	transform: scale(1.03);
+}
+.exp-info {
+	padding: 24px 18px 18px 18px;
+	text-align: left;
+	width: 100%;
+	position: relative;
+	z-index: 3;
+}
+.exp-info h3 {
+	font-size: 1.15rem;
+	color: #136a8a;
+	margin-bottom: 10px;
+	font-family: 'Playfair Display', serif;
+	font-weight: 700;
+	letter-spacing: 1.1px;
+	text-shadow: 1px 1px 8px rgba(19,106,138,0.08);
+}
+.exp-info p {
+	font-size: 1rem;
+	color: #444;
+	font-family: 'Delius Swash Caps', serif;
+	opacity: 0.88;
+	line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+	.nav { padding: 12px 10px; }
+	.nav-links { gap: 24px; }
+	.split-hero { flex-direction: column; height: auto; min-height: 220px; }
+	.hero-video-side, .hero-intro-side { min-width: 0; width: 100%; border-radius: 0; }
+	.hero-intro-side { padding: 32px 16px; border-radius: 0; }
+	.experience-carousel { gap: 18px; }
+	.experience-card { min-width: 220px; max-width: 240px; }
+}
+@media (max-width: 600px) {
+	.nav { flex-direction: column; padding: 8px 2vw; }
+	.nav-links { gap: 16px; }
+	.split-hero { flex-direction: column; height: auto; min-height: 120px; }
+	.hero-intro-side { padding: 18px 6px; border-radius: 0; }
+	.experience-carousel { flex-direction: column; gap: 14px; overflow-x: visible; }
+	.experience-card { min-width: 98vw; max-width: 320px; }
+}
+
+/* Food Experiences Section */
+.food-experiences-list {
+	padding: 60px 0 40px 0;
+	background: linear-gradient(120deg, #fffbe6 60%, #f8fafc 100%);
+	text-align: center;
+}
+.food-experiences-list h2 {
+	font-size: 2rem;
+	color: #136a8a;
+	font-family: 'Playfair Display', serif;
+	margin-bottom: 38px;
+	letter-spacing: 1.1px;
+	text-shadow: 1px 1px 8px rgba(19,106,138,0.08);
+}
+.experience-cards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 32px;
+}
+.experience-card {
+	background: #fff;
+	border-radius: 22px;
+	box-shadow: 0 8px 32px rgba(38,120,113,0.14), 0 2px 8px rgba(255,215,0,0.08);
+	overflow: hidden;
+	width: 320px;
+	transition: transform 0.5s cubic-bezier(.25,.8,.25,1), box-shadow 0.5s, background 0.5s;
+	cursor: pointer;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 1.5px solid #FFD70033;
+}
+.experience-card img {
+	width: 100%;
+	height: 180px;
+	object-fit: cover;
+	border-top-left-radius: 22px;
+	border-top-right-radius: 22px;
+	transition: filter 0.5s, transform 0.5s;
+	z-index: 2;
+}
+.experience-card:hover {
+	transform: translateY(-12px) scale(1.04);
+	box-shadow: 0 20px 60px rgba(38,120,113,0.22), 0 4px 16px rgba(255,215,0,0.18);
+	background: #ffe5b4;
+}
+.experience-card:hover img {
+	filter: brightness(0.96) saturate(1.18) drop-shadow(0 4px 16px rgba(38,120,113,0.10));
+	transform: scale(1.03);
+}
+.exp-info {
+	padding: 24px 18px 18px 18px;
+	text-align: left;
+	width: 100%;
+	position: relative;
+	z-index: 3;
+}
+.exp-info h3 {
+	font-size: 1.15rem;
+	color: #136a8a;
+	margin-bottom: 10px;
+	font-family: 'Playfair Display', serif;
+	font-weight: 700;
+	letter-spacing: 1.1px;
+	text-shadow: 1px 1px 8px rgba(19,106,138,0.08);
+}
+.exp-info p {
+	font-size: 1rem;
+	color: #444;
+	font-family: 'Delius Swash Caps', serif;
+	opacity: 0.88;
+	line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+	.nav { padding: 12px 10px; }
+	.nav-links { gap: 24px; }
+	.hero-video { min-height: 220px; height: 32vh; }
+	.experience-cards { gap: 18px; }
+	.experience-card { width: 220px; }
+}
+@media (max-width: 600px) {
+	.nav { flex-direction: column; padding: 8px 2vw; }
+	.nav-links { gap: 16px; }
+	.hero-video { min-height: 120px; height: 18vh; }
+	.experience-cards { flex-direction: column; align-items: center; gap: 14px; }
+	.experience-card { width: 98vw; max-width: 320px; }
+}
+
+/* Food Experiences Section */
+.food-experiences-list {
+	padding: 60px 0 40px 0;
+	background: linear-gradient(120deg, #fffbe6 60%, #f8fafc 100%);
+	text-align: center;
+}
+.food-experiences-list h2 {
+	font-size: 2.2rem;
+	color: #136a8a;
+	font-family: 'Playfair Display', serif;
+	margin-bottom: 38px;
+	letter-spacing: 1.2px;
+}
+.experience-cards {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 32px;
+}
+.experience-card {
+	background: linear-gradient(135deg, #fffbe6 80%, #ffd7b5 100%);
+	border-radius: 22px;
+	box-shadow: 0 8px 32px rgba(38,120,113,0.14), 0 2px 8px rgba(255,215,0,0.08);
+	overflow: hidden;
+	width: 320px;
+	transition: transform 0.5s cubic-bezier(.25,.8,.25,1), box-shadow 0.5s, background 0.5s;
+	cursor: pointer;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: 1.5px solid #FFD70033;
+}
+.experience-card img {
+	width: 100%;
+	height: 180px;
+	object-fit: cover;
+	border-top-left-radius: 22px;
+	border-top-right-radius: 22px;
+	transition: filter 0.5s, transform 0.5s;
+	z-index: 2;
+}
+.experience-card:hover {
+	transform: translateY(-12px) scale(1.04);
+	box-shadow: 0 20px 60px rgba(38,120,113,0.22), 0 4px 16px rgba(255,215,0,0.18);
+	background: linear-gradient(135deg, #ffd7b5 60%, #fffbe6 100%);
+}
+.experience-card:hover img {
+	filter: brightness(0.96) saturate(1.18) drop-shadow(0 4px 16px rgba(38,120,113,0.10));
+	transform: scale(1.03);
+}
+.exp-info {
+	padding: 24px 18px 18px 18px;
+	text-align: left;
+	width: 100%;
+	position: relative;
+	z-index: 3;
+}
+.exp-info h3 {
+	font-size: 1.25rem;
+	color: #136a8a;
+	margin-bottom: 10px;
+	font-family: 'Playfair Display', serif;
+	font-weight: 700;
+	letter-spacing: 1.1px;
+	text-shadow: 1px 1px 8px rgba(19,106,138,0.08);
+}
+.exp-info p {
+	font-size: 1.05rem;
+	color: #444;
+	font-family: 'Delius Swash Caps', serif;
+	opacity: 0.88;
+	line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+	.nav { padding: 12px 10px; }
+	.nav-links { gap: 24px; }
+	.hero-video { min-height: 300px; height: 40vh; }
+	.experience-cards { gap: 18px; }
+	.experience-card { width: 220px; }
+}
+@media (max-width: 600px) {
+	.nav { flex-direction: column; padding: 8px 2vw; }
+	.nav-links { gap: 16px; }
+	.hero-video { min-height: 180px; height: 28vh; }
+	.experience-cards { flex-direction: column; align-items: center; gap: 14px; }
+	.experience-card { width: 98vw; max-width: 320px; }
+}
